@@ -1,0 +1,75 @@
+body {
+    background-color: #fff0f5;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+   color:  #1a0341;
+   font-size: 24px;
+   padding-bottom: 10px;
+}
+
+p{
+   color: #3a07bd;
+   font-size: 16px;
+   line-height: 1.6;
+}
+
+.about-box {
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+button {
+  background-color: #f7cac9;     /* soft bluish background */
+  color: #5d3a9b;                   /* dark text color */
+  border: none;                  /* no border */
+  padding: 10px 16px;            /* space inside the button */
+  font-size: 14px;               /* text size */
+  border-radius: 5px;            /* rounded corners */
+  cursor: pointer;               /* changes the mouse cursor to pointer when the user hovers over the element, typically used for clickable things */
+  
+}
+
+
+
+a {
+   color: #92a8d1;
+}
+
+
+
+
+.table-container {
+  padding: 30px 30px 30px 30px; /* Equal padding on all sides */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #aaa;
+  padding: 20px;               /* Equal padding inside cells */
+  text-align: center;          /* Horizontally center text */
+  vertical-align: middle;      /* Vertically center text */
+}
+
+thead {
+  background-color: #f7cac9;
+  color: #1a0341;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ffe4e1;
+  cursor: pointer;
+}
