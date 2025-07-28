@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iframe-page.html</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #1e1e1e;
+      font-family: 'Courier New', monospace;
+      color: #00ff99;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .terminal-box {
+      background-color: #2d2d2d;
+      border: 1px solid #00ff99;
+      padding: 25px 35px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px #00ff99;
+      text-align: left;
+      max-width: 500px;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    h2 {
+      color: #00ffcc;
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+
+    p {
+      color: #cccccc;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.98; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="terminal-box">
+    <h2>> iframe-page.html loaded successfully</h2>
+    <p>// Content embedded from separate HTML file</p>
+  </div>
+
+</body>
+</html>
