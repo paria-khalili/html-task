@@ -1,0 +1,91 @@
+<!DOCTYPE html> <!-- HTML5 document declaration -->
+<html lang="en"> <!-- Starts the document and sets language to English -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes the site responsive -->
+  <title>DAIZY Accessories</title> <!-- Page title shown in browser tab -->
+
+  <!-- Link to your favicon (rename your file to favicon.ico and place it in the same folder) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Connect to the CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Pixel-art font for DAIZY vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">DAIZY</div> <!-- Brand name -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li> <!-- Links to different sections -->
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Welcome/hero section -->
+  <header id="home" class="hero">
+    <h1>Welcome to DAIZY</h1>
+    <p>Handmade Miyuki Accessories with a Pixel Twist ✨</p>
+  </header>
+
+  <!-- Product section -->
+  <section id="shop" class="products">
+    <h2>Our Favorites</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Necklace" />
+        <h3>Beaded Necklace</h3>
+        <p>$12.00</p>
+      </div>
+      <div class="product-card">
+        <img src="https://www.w3schools.com/w3images/avatar5.png" alt="Bracelet" />
+        <h3>Miyuki Bracelet</h3>
+        <p>$9.50</p>
+      </div>
+      <div class="product-card">
+        <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Earrings" />
+        <h3>Floral Earrings</h3>
+        <p>$7.80</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About section -->
+  <section id="about" class="about">
+    <h2>About DAIZY</h2>
+    <p>Each accessory is made with care and creativity. Our style is inspired by colorful beads and pixel art.</p>
+  </section>
+
+  <!-- Contact form -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label>Name:</label>
+      <input type="text" required />
+
+      <label>Email:</label>
+      <input type="email" required />
+
+      <label>Message:</label>
+      <textarea rows="4" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 DAIZY Accessories</p>
+  </footer>
+
+</body>
+</html>
