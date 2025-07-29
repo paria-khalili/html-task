@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 50px;
+  text-align: center;
+  font-family: 'Press Start 2P', monospace;
+  color: #5f7161; 
+  background-color: #f2e9dc;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #5f7161;
+  text-shadow: 2px 2px #d6c6b9;
+}
+
+
+button {
+  background-color: #ff847c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 12px;
+  font-family: 'Press Start 2P', monospace;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+button:hover {
+  background-color: #cdb4db;
+  transform: scale(1.05);
+}
+
+/* Output area */
+#output {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #5f7161;
+}
