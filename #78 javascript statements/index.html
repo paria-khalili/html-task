@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Hero: Interactive Edition</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <style>
+    body {
+      background-color: #eef2ff;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      color: #5c6bc0;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 12px;
+      padding: 12px 16px;
+      margin: 8px;
+      border: none;
+      background-color: #ffd6e0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffadc2;
+    }
+
+    #output {
+      margin-top: 30px;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+
+    #score {
+      font-size: 16px;
+      margin-top: 20px;
+      color: #4caf50;
+    }
+
+    input[type="text"], textarea {
+      font-family: inherit;
+      font-size: 12px;
+      padding: 8px;
+      margin: 10px;
+      width: 240px;
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>A JavaScript Minigame</h1>
+
+  <button onclick="startGame()">🎯 Start</button>
+  <button onclick="assignmentPuzzle()">🧮 Assignment Puzzle</button>
+  <button onclick="typeQuiz()">🧪 Data Type Quiz</button>
+  <button onclick="bitwiseChallenge()">⚙️ Bitwise Riddle</button>
+  <button onclick="variableChallenge()">📦 Variable Task</button>
+
+  <div id="score">Score: 0</div>
+  <div id="output">Click "Start" to begin your journey.</div>
+  <div id="inputArea"></div>
+
+  <script>
+    let score = 0;
+    const output = document.getElementById("output");
+    const inputArea = document.getElementById("inputArea");
+    const scoreDisplay = document.getElementById("score");
+
+    function startGame() {
+      score = 0;
+      updateScore();
+      output.innerHTML = "Welcome to your coding quest!\nSolve challenges to earn score.";
+      inputArea.innerHTML = "";
+    }
+
+    // Level 1 - Assignment Puzzle
+    function assignmentPuzzle() {
+      output.innerHTML = "🧮 What is the result of: 4 + 3 * 2 ?";
+      inputArea.innerHTML = `
+        <input type="text" id="answer1" placeholder="Your answer...">
+        <button onclick="checkAssignment()">Submit</button>
+      `;
+    }
+
+    function checkAssignment() {
+      const ans = document.getElementById("answer1").value;
+      if (ans.trim() === "10") {
+        score += 10;
+        updateScore();
+        output.innerHTML = "✅ Correct! Multiplication comes before addition.\n+10 Score!";
+        inputArea.innerHTML = "";
+      } else {
+        output.innerHTML = "❌ Try again. Hint: JavaScript respects math rules!";
+      }
+    }
+
+    // Level 2 - Data Type Quiz
+    function typeQuiz() {
+      output.innerHTML = "🧪 What is the data type of: let x = false ?";
+      inputArea.innerHTML = `
+        <input type="text" id="answer2" placeholder="Your answer...">
+        <button onclick="checkTypeQuiz()">Submit</button>
+      `;
+    }
+
+    function checkTypeQuiz() {
+      const ans = document.getElementById("answer2").value.toLowerCase();
+      if (ans === "boolean") {
+        score += 15;
+        updateScore();
+        output.innerHTML = "✅ Correct! false is a boolean.\n+15 Score!";
+        inputArea.innerHTML = "";
+      } else {
+        output.innerHTML = "❌ Nope! Remember true/false values?";
+      }
+    }
+
+    // Level 3 - Bitwise Riddle
+    function bitwiseChallenge() {
+      output.innerHTML = "⚙️ What is 5 | 3 (bitwise OR)?";
+      inputArea.innerHTML = `
+        <input type="text" id="answer3" placeholder="Your answer...">
+        <button onclick="checkBitwise()">Submit</button>
+      `;
+    }
+
+    function checkBitwise() {
+      const ans = document.getElementById("answer3").value;
+      if (ans.trim() === "7") {
+        score += 20;
+        updateScore();
+        output.innerHTML = "✅ Bitwise wizardry! 5 | 3 = 7\n+20 Score!";
+        inputArea.innerHTML = "";
+      } else {
+        output.innerHTML = "❌ Bit tricked you? Try again.";
+      }
+    }
+
+    // Level 4 - Variable Declaration Challenge
+    function variableChallenge() {
+      output.innerHTML = "📦 Declare a variable named <code>myPet</code> and assign it the string 'cat'.";
+      inputArea.innerHTML = `
+        <textarea id="answer4" placeholder="Type your code here..." rows="4" cols="40"></textarea><br>
+        <button onclick="checkVariable()">Submit</button>
+      `;
+    }
+
+    function checkVariable() {
+      const code = document.getElementById("answer4").value;
+
+      try {
+        const testFunc = new Function(code + "; return myPet;");
+        const result = testFunc();
+
+        if (typeof result === "string" && result === "cat") {
+          score += 25;
+          updateScore();
+          output.innerHTML = "✅ Meow! You got it right. +25 Score!";
+          inputArea.innerHTML = "";
+        } else {
+          output.innerHTML = "❌ Hmm... Make sure myPet is a string with the value 'cat'.";
+        }
+      } catch (e) {
+        output.innerHTML = "❌ Uh-oh! There was an error in your code. Try again.";
+      }
+    }
+
+    function updateScore() {
+      scoreDisplay.innerHTML = "Score: " + score;
+    }
+  </script>
+</body>
+</html>
