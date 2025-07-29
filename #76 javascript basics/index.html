@@ -3,22 +3,51 @@
 <head>
   <title>Fun JavaScript Page</title>
   <meta charset="UTF-8">
+
+  <!-- Arcade font from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
+  <!-- Your CSS file for styling -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Fun JavaScript Page </h1>
+  <h1>Fun JavaScript Page</h1>
 
   <!-- Buttons to do cool things -->
   <button onclick="changeBackgroundColor()">Change Background Color</button>
   <button onclick="rollDice()">Roll a Dice</button>
   <button onclick="window.print()">Print Page</button>
 
+  <!-- This is where messages will be shown -->
   <div id="output"></div>
 
-  <!-- Link to the JavaScript file -->
-  <script src="script.js"></script>
+  <!-- JavaScript is placed here directly inside the HTML -->
+  <script>
+    // Ask the user for their name
+    let userName = prompt("What is your name?");
+
+    // Greet the user with a popup message
+    alert("Hello " + userName + "! Welcome to the page");
+
+    // Show the greeting on the web page
+    document.getElementById("output").innerHTML = "Hi <b>" + userName + "</b>! Try clicking the buttons below.";
+
+    // Function to change the background color randomly
+    function changeBackgroundColor() {
+      let colors = ["#f0f8ff", "#ffcccb", "#d1ffd6", "#ffffcc", "#e6e6fa", "#cce7ff"];
+      let randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+      document.getElementById("output").innerHTML = "Background color changed!";
+    }
+
+    // Function to simulate rolling a dice
+    function rollDice() {
+      let diceNumber = Math.floor(Math.random() * 6) + 1;
+      console.log("You rolled a " + diceNumber);
+      document.getElementById("output").innerHTML = "You rolled a <b>" + diceNumber + "</b>! (Check console too!)";
+    }
+  </script>
+
 </body>
 </html>
