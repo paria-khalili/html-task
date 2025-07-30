@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Entry Form</title>
+
+  <!-- Internal CSS -->
+  <style>
+    body {
+      background: linear-gradient(to bottom, #0b0c10, #1f2833);
+      color: #66fcf1;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #45a29e;
+    }
+
+    fieldset {
+      border: 2px dashed #66fcf1;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    legend {
+      padding: 5px 10px;
+      font-weight: bold;
+      color: #c5c6c7;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, select, textarea, button {
+      margin-bottom: 15px;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input[type="color"],
+    input[type="color"] {
+        width: 170px;     
+        height: 30px;    
+        padding: 3px;      
+        border: none;    
+        border-radius: 4px; 
+        cursor: pointer;
+        }
+
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+    }
+
+    output {
+      display: block;
+      margin-top: 5px; 
+      font-weight: bold;
+    }
+
+    .space-image-button {
+      width: 100px;
+      height: 50px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Data Entry Form</h1>
+
+  <!-- Form begins -->
+  <form oninput="fuelLevel.value = rangeFuel.value">
+
+    <!-- Section 1: Identity -->
+    <fieldset>
+      <legend>Identity & Contact</legend>
+
+      <label for="travelerName">Name:</label>
+      <input type="text" id="travelerName" name="travelerName">
+
+      <label for="travelerPassword">Create Password:</label>
+      <input type="password" id="travelerPassword" name="password"> <!-- Password input (hides characters) -->
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"> <!-- Validates for email format -->
+
+      <label for="tel">Phone Number:</label>
+      <input type="tel" id="tel" name="phone"> <!-- Accepts telephone input -->
+
+      <label for="url">Portfolio URL:</label>
+      <input type="url" id="url" name="url"> <!-- Accepts a URL -->
+
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search">
+    </fieldset>
+
+    <!-- Section 2: Dates & Times -->
+    <fieldset>
+      <legend>Dates & Time</legend>
+
+      <label for="date">Choose a Date:</label>
+      <input type="date" id="date" name="date"> <!-- Date picker -->
+
+      <label for="time">Choose a Time:</label>
+      <input type="time" id="time" name="time"> <!-- Time picker -->
+
+      <label for="datetime">Date & Time (Local):</label>
+      <input type="datetime-local" id="datetime" name="datetime"> <!-- Date + time input -->
+
+      <label for="month">Pick a Month:</label>
+      <input type="month" id="month" name="month"> <!-- Month input -->
+
+      <label for="week">Select a Week:</label>
+      <input type="week" id="week" name="week"> <!-- Week input -->
+    </fieldset>
+
+    <!-- Section 3: Preferences -->
+    <fieldset>
+      <legend>Preferences</legend>
+
+      <label for="color">Choose a Color:</label>
+      <input type="color" id="color" name="color"> <!-- Color picker -->
+
+      <label for="rangeFuel">Adjust Setting:</label>
+      <input type="range" id="rangeFuel" name="rangeFuel" min="0" max="100"> <!-- Range slider -->
+      <output name="fuelLevel">50</output> <!-- Displays value of range input -->
+
+      <label for="planet">Choose an Option:</label>
+      <select id="planet" name="planet"> <!-- Dropdown selector -->
+        <optgroup label="Primary"> <!-- Group of options -->
+          <option value="option1">Option 1</option> <!-- Option under optgroup -->
+          <option value="option2">Option 2</option>
+        </optgroup>
+        <optgroup label="Secondary">
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </optgroup>
+      </select>
+
+      <label for="datalistInput">Suggestions:</label>
+      <input list="suggestions" id="datalistInput" name="datalistInput"> <!-- Input with suggestion list -->
+      <datalist id="suggestions">
+        <option value="Suggestion 1">
+        <option value="Suggestion 2">
+        <option value="Suggestion 3">
+        <option value="Suggestion 4">
+      </datalist>
+
+      <label for="age">Your Age (Number):</label>
+      <input type="number" id="age" name="age" min="1" max="100"> <!-- Number input with limits -->
+
+      <label><input type="checkbox" name="updates"> Subscribe to updates</label> <!-- Checkbox input -->
+
+      <label><input type="radio" name="choice" value="yes"> Yes</label> <!-- Radio button -->
+      <label><input type="radio" name="choice" value="no"> No</label>
+    </fieldset>
+
+    <!-- Section 4: Uploads -->
+    <fieldset>
+      <legend>Upload & Comments</legend>
+
+      <label for="file">Upload File:</label>
+      <input type="file" id="file" name="file"> <!-- File picker -->
+
+      <label for="textarea">Comments:</label>
+      <textarea id="textarea" name="comment" rows="4" placeholder="Your message..."></textarea> <!-- Multi-line input -->
+
+      <input type="hidden" name="hiddenCode" value="XYZ123"> <!-- Hidden field -->
+    </fieldset>
+
+    <!-- Section 5: Actions -->
+    <fieldset>
+      <legend>Actions</legend>
+
+      <input type="button" value="Click Me" onclick="alert('Button clicked!')"> <!-- Button that triggers JS -->
+
+      <input type="reset" value="Reset Form"> <!-- Clears all fields -->
+
+      <input type="submit" value="Submit Form"> <!-- Submits the form -->
+
+      <button type="submit">Submit</button> <!-- Alternate way to submit -->
+
+      <!-- Image button used for form submission -->
+      <label>Submit via Image:</label><br>
+      <input type="image"
+             src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Space_Shuttle_Logo.svg/200px-Space_Shuttle_Logo.svg.png"
+             alt="Submit" class="space-image-button">
+    </fieldset>
+
+  </form>
+
+</body>
+</html>
