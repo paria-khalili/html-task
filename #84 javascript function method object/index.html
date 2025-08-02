@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Profile Maker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Virtual Profile Maker</h1>
+
+    
+    <form id="profileForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+
+      <label for="skills">Skills (comma separated):</label>
+      <input type="text" id="skills" required>
+
+      <button type="submit">Create Profile</button>
+    </form>
+
+    <!-- Display profile -->
+    <div id="profileDisplay"></div>
+
+    <!-- Display JSON & Re-parsed object -->
+    <div id="jsonDisplay"></div>
+  </div>
+
+  <script>
+    // Constructor function to create profile objects
+    function Profile(name, age, skills) {
+      this.name = name;
+      this.age = age;
+      this.skills = skills;
+
+      // Method to describe the person
+      this.describe = function() {
+        return `${this.name} is ${this.age} years old and skilled at ${this.skills.join(", ")}`;
+      };
+    }
+
+    // Handle form submission
+    document.getElementById("profileForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // prevent page refresh
+
+      // Get user input
+      const name = document.getElementById("name").value;
+      const age = parseInt(document.getElementById("age").value);
+      const skills = document.getElementById("skills").value.split(",").map(s => s.trim());
+
+      // Create profile object
+      const newProfile = new Profile(name, age, skills);
+
+      // Display object properties using for...in loop
+      let profileHTML = "<h2>🧑 Profile</h2><ul>";
+      for (let key in newProfile) {
+        if (typeof newProfile[key] !== "function") {
+          profileHTML += `<li><strong>${key}:</strong> ${Array.isArray(newProfile[key]) ? newProfile[key].join(", ") : newProfile[key]}</li>`;
+        }
+      }
+      profileHTML += `</ul><p><em>${newProfile.describe()}</em></p>`;
+      document.getElementById("profileDisplay").innerHTML = profileHTML;
+
+      // Convert object to JSON string
+      const profileJSON = JSON.stringify(newProfile, null, 2);
+      document.getElementById("jsonDisplay").innerHTML = `<h2>📦 JSON Data</h2><pre>${profileJSON}</pre>`;
+
+      // Simulate saving JSON to server
+      let fakeDatabase = profileJSON;
+
+      // Convert back using JSON.parse()
+      const recoveredProfile = JSON.parse(fakeDatabase);
+
+      // Display recovered object from JSON
+      let recoveredHTML = "<h2>🛠️ Recovered from JSON</h2><ul>";
+      for (let key in recoveredProfile) {
+        recoveredHTML += `<li><strong>${key}:</strong> ${Array.isArray(recoveredProfile[key]) ? recoveredProfile[key].join(", ") : recoveredProfile[key]}</li>`;
+      }
+      recoveredHTML += "</ul>";
+
+      // Append to display
+      document.getElementById("jsonDisplay").innerHTML += recoveredHTML;
+    });
+  </script>
+</body>
+</html>
