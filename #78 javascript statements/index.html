@@ -5,60 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Code Hero: Interactive Edition</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-  <style>
-    body {
-      background-color: #eef2ff;
-      font-family: 'Press Start 2P', cursive;
-      text-align: center;
-      padding: 40px;
-      color: #333;
-    }
-
-    h1 {
-      color: #5c6bc0;
-      margin-bottom: 20px;
-    }
-
-    button {
-      font-family: inherit;
-      font-size: 12px;
-      padding: 12px 16px;
-      margin: 8px;
-      border: none;
-      background-color: #ffd6e0;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #ffadc2;
-    }
-
-    #output {
-      margin-top: 30px;
-      font-size: 14px;
-      white-space: pre-wrap;
-    }
-
-    #score {
-      font-size: 16px;
-      margin-top: 20px;
-      color: #4caf50;
-    }
-
-    input[type="text"], textarea {
-      font-family: inherit;
-      font-size: 12px;
-      padding: 8px;
-      margin: 10px;
-      width: 240px;
-    }
-
-    textarea {
-      resize: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"> <!-- External CSS -->
 </head>
 <body>
   <h1>A JavaScript Minigame</h1>
@@ -86,7 +33,6 @@
       inputArea.innerHTML = "";
     }
 
-    // Level 1 - Assignment Puzzle
     function assignmentPuzzle() {
       output.innerHTML = "🧮 What is the result of: 4 + 3 * 2 ?";
       inputArea.innerHTML = `
@@ -107,7 +53,6 @@
       }
     }
 
-    // Level 2 - Data Type Quiz
     function typeQuiz() {
       output.innerHTML = "🧪 What is the data type of: let x = false ?";
       inputArea.innerHTML = `
@@ -128,7 +73,6 @@
       }
     }
 
-    // Level 3 - Bitwise Riddle
     function bitwiseChallenge() {
       output.innerHTML = "⚙️ What is 5 | 3 (bitwise OR)?";
       inputArea.innerHTML = `
@@ -149,7 +93,6 @@
       }
     }
 
-    // Level 4 - Variable Declaration Challenge
     function variableChallenge() {
       output.innerHTML = "📦 Declare a variable named <code>myPet</code> and assign it the string 'cat'.";
       inputArea.innerHTML = `
