@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+}
+
+body {
+  background: linear-gradient(135deg, #d0e6f6, #fcd6ff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  border: 4px dashed #ffa4ec;
+}
+
+h1 {
+  text-align: center;
+  color: #6641a5;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #663399;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  border: 2px solid #cca9dd;
+  border-radius: 8px;
+  background-color: #f6f0ff;
+}
+
+button {
+  padding: 12px;
+  background-color: #8c52ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6a32c9;
+}
+
+#profileDisplay, #jsonDisplay {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff6fb;
+  border: 2px dotted #ffa4ec;
+  border-radius: 10px;
+  color: #444;
+}
+
+ul {
+  list-style: square;
+  padding-left: 20px;
+}
+
+pre {
+  background-color: #f2ecff;
+  padding: 10px;
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid #d6c6ff;
+}
