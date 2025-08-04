@@ -1,0 +1,134 @@
+body {
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(to bottom, #fff8f0 0%, #ffe3ec 100%);
+  padding: 20px;
+  color: #444;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  color: #ff6b6b;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#narration-controls {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+#narration-controls p {
+  font-weight: bold;
+  margin: 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ffd166;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+button:hover {
+  background-color: #ffcd4b;
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+#character-selection,
+#choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.choice-button {
+  background-color: #ffe066;
+  border-radius: 20px;
+  flex: 1 1 140px;
+  min-width: 120px;
+  text-align: center;
+}
+
+#face-meter {
+  font-size: 2rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#mood-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#mood-fill {
+  height: 100%;
+  width: 50%;
+  background-color: #ffd166;
+  transition: width 0.5s ease;
+}
+
+#story-output {
+  background-color: #fff9f4;
+  border: 2px dashed #ffc2d1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-top: 20px;
+  white-space: pre-wrap;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+#reset-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#reset-button-container button {
+  background-color: #d0f0c0;
+  font-weight: bold;
+}
+
+#progress {
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.fade-in {
+  animation: fade 0.6s ease-in-out;
+}
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  button { font-size: 0.95rem; padding: 10px 16px; }
+  .choice-button { flex: 1 1 45%; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 1.4rem; }
+  #narration-controls { flex-direction: column; align-items: flex-start; }
+  .choice-button { flex: 1 1 100%; }
+}
